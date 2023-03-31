@@ -21,7 +21,7 @@ struct RecentTransactionList: View {
                 
                 // MARK: Header Link
                 NavigationLink {
-                    
+                    TransactionList()
                 } label: {
                     HStack(spacing: 4) {
                         Text("See all")
@@ -57,4 +57,5 @@ struct RecentTransactionList_Previews: PreviewProvider {
         RecentTransactionList()
             .environmentObject(transactionListVM)
     }
+    
 }

@@ -23,12 +23,23 @@ struct Transaction: Identifiable, Decodable, Hashable {
     var isExpense: Bool
     var isEdited: Bool
     
+    var icon: FontAwesomeCode {
+        if let category = Category.all.first(where: { $0.id == categoryId }) {
+            return category.icon
+        }
+        return .question
+    }
+    
     var dateParsed: Date {
         date.dateParsed()
     }
     
     var signedAmount: Double {
         return type == TransactionType.credit.rawValue ? amount : -amount
+    }
+    
+    var month: String {
+        dateParsed.formatted(.dateTime.year().month(.wide))
     }
 }
 
@@ -71,4 +82,36 @@ extension Category {
     static let software = Category(id: 801, name:"Software", icon: .icons, mainCategoryId: 8)
     static let creditCardPayment = Category(id: 901, name:"Credit Card Payment", icon: .exchange_alt, mainCategoryId: 9)
     
+}
+
+extension Category {
+    static let categories: [Category] = [
+        .autoAndTransport,
+        .billsAndUtilities,
+        .entertainment,
+        .feesAndCharges,
+        .foodAndDining,
+        .home,
+        .income,
+        .shopping,
+        .transfer
+    ]
+    
+    static let subCategories: [Category] = [
+        .publicTransportation,
+        .taxi,
+        .mobilePhone,
+        .moviesAndDVDs,
+        .bankFee,
+        .financeCharge,
+        .groceries,
+        .restaurants,
+        .rent,
+        .homeSupplies,
+        .paycheque,
+        .software,
+        .creditCardPayment
+    ]
+    
+    static let all: [Category] = categories + subCategories
 }
