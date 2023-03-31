@@ -14,6 +14,7 @@
 		5230D3D329D6F57F002B28D1 /* BudgetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5230D3D229D6F57F002B28D1 /* BudgetAppTests.swift */; };
 		5230D3DD29D6F57F002B28D1 /* BudgetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5230D3DC29D6F57F002B28D1 /* BudgetAppUITests.swift */; };
 		5230D3DF29D6F57F002B28D1 /* BudgetAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5230D3DE29D6F57F002B28D1 /* BudgetAppUITestsLaunchTests.swift */; };
+		5230D3EC29D70ABA002B28D1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5230D3EB29D70ABA002B28D1 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		5230D3D829D6F57F002B28D1 /* BudgetAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5230D3DC29D6F57F002B28D1 /* BudgetAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAppUITests.swift; sourceTree = "<group>"; };
 		5230D3DE29D6F57F002B28D1 /* BudgetAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5230D3EB29D70ABA002B28D1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				5230D3C029D6F57D002B28D1 /* BudgetAppApp.swift */,
 				5230D3C229D6F57D002B28D1 /* ContentView.swift */,
+				5230D3EB29D70ABA002B28D1 /* Extensions.swift */,
 				5230D3C429D6F57F002B28D1 /* Assets.xcassets */,
 				5230D3C629D6F57F002B28D1 /* BudgetApp.entitlements */,
 				5230D3C729D6F57F002B28D1 /* Preview Content */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5230D3C329D6F57D002B28D1 /* ContentView.swift in Sources */,
+				5230D3EC29D70ABA002B28D1 /* Extensions.swift in Sources */,
 				5230D3C129D6F57D002B28D1 /* BudgetAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
