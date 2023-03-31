@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BudgetApp 1.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>BudgetApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5230D3BC29D6F57D002B28D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5230D3CD29D6F57F002B28D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5230D3D729D6F57F002B28D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
