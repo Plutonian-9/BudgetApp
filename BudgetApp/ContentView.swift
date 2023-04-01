@@ -10,6 +10,7 @@ import SwiftUICharts
 
 struct ContentView: View {
     @EnvironmentObject var transactionListVM: TransactionListViewModel
+    @EnvironmentObject var budgetListVM: BudgetListViewModel
 //    var demoData: [Double] = [8, 2, 4, 6, 12, 9, 2]
 
     var body: some View {
@@ -38,9 +39,24 @@ struct ContentView: View {
                         .chartStyle(ChartStyle(backgroundColor: Color.systemBackground, foregroundColor: ColorGradient(Color.icon.opacity(0.8), Color.icon)))
                         .frame(height: 300)
                     }
-             
+                    
                     //MARK: Recent Transaction List
                     RecentTransactionList()
+                    
+                    //Mark: Budget List
+                    VStack {
+                        //BudgetsList()
+                        //MARK: Budget Groups
+                        ForEach(budgetListPreviewData) { budget in
+                            BudgetView(budget: budget)
+                        }
+                    }
+                    .padding()
+                    .background(Color.systemBackground)
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .shadow(color: Color.primary.opacity(0.2), radius: 10, x: 0, y:5)
+                    
+                    
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
@@ -68,6 +84,12 @@ struct ContentView_Previews: PreviewProvider {
         return transactionListVM
     }()
     
+    static let budgetListVM: BudgetListViewModel = {
+        let budgetListVM = BudgetListViewModel()
+        budgetListVM.budgets = budgetListPreviewData
+        return budgetListVM
+    }()
+    
     static var previews: some View {
         Group {
             ContentView()
@@ -75,5 +97,7 @@ struct ContentView_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
         }
         .environmentObject(transactionListVM)
+        .environmentObject(budgetListVM)
+
     }
 }

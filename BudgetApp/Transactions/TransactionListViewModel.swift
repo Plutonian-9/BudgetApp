@@ -19,6 +19,7 @@ final class TransactionListViewModel: ObservableObject {
     
     init() {
         getTransactions()
+        
     }
     
     func getTransactions() {
@@ -50,6 +51,7 @@ final class TransactionListViewModel: ObservableObject {
                 //dump(self?.transactions)
             }
             .store(in: &cancellables)
+        
     }
     
     
