@@ -19,18 +19,24 @@ final class BudgetListViewModel: ObservableObject {
     }
     
     func getBudgets() {
-        guard let path = Bundle.main.path(forResource: "budgets", ofType: "json") else {
-            print("Invalid JSON file")
-            return
-        }
-                
-        let url = URL(fileURLWithPath: path)
+//        guard let path = Bundle.main.path(forResource: "budgets", ofType: "json") else {
+//            print("Invalid JSON file")
+//            return
+//        }
+//
+//        let url = URL(fileURLWithPath: path)
 //        do {
 //            let data = try Data(contentsOf: url)
 //            let json = try JSON(data: data)
 //        } catch {
 //            print("Error retreving JSON data")
 //        }
+        
+        guard let url = URL(string: "https://drive.google.com/file/d/1Nzbj5XkglxuWfmaeufKmA3fsdVFR0B0C/view?usp=share_link") else {
+            print("Invalid Budget URL")
+            return
+        }
+        
         
         URLSession.shared.dataTaskPublisher(for: url)
             .tryMap { (data, response) -> Data in
