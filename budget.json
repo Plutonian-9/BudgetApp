@@ -1,0 +1,56 @@
+[
+    {
+        "id": 6,
+        "maxAmount":  2000,
+        "currAmount": 0,
+        "categoryId": 7,
+        "category": "Income",
+        "isOver": false,
+        "isEdited": false
+      },
+    {
+        "id": 5,
+        "maxAmount":  50,
+        "currAmount": 0,
+        "categoryId": 6,
+        "category": "Home",
+        "isOver": false,
+        "isEdited": false
+      },
+    {
+        "id": 4,
+        "maxAmount":  45,
+        "currAmount": 0,
+        "categoryId": 5,
+        "category": "Food & Dining",
+        "isOver": false,
+        "isEdited": false
+      },
+    {
+        "id": 3,
+        "maxAmount":  30,
+        "currAmount": 0,
+        "categoryId": 3,
+        "category": "Entertainment",
+        "isOver": false,
+        "isEdited": false
+      },
+    {
+        "id": 2,
+        "maxAmount":  150,
+        "currAmount": 0,
+        "categoryId": 2,
+        "category": "Bills & Utilities",
+        "isOver": false,
+        "isEdited": false
+      },
+    {
+        "id": 1,
+        "maxAmount":  50,
+        "currAmount": 0,
+        "categoryId": 1,
+        "category": "Auto & Transport",
+        "isOver": false,
+        "isEdited": false
+      }
+]
