@@ -19,6 +19,13 @@ final class TransactionListViewModel: ObservableObject {
     
     init() {
         getTransactions()
+        
+        //Fill out the budget
+        //want to make the transactions add money to the currAmount of the correct category
+//        transactions.forEach { transaction in
+//            print("Transaction Category: ", transaction.category)
+//            //budgetListVM.budgets.append(
+//        }
     }
     
     func getTransactions() {
@@ -50,6 +57,7 @@ final class TransactionListViewModel: ObservableObject {
                 //dump(self?.transactions)
             }
             .store(in: &cancellables)
+        
     }
     
     
