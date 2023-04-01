@@ -1,5 +1,5 @@
 //
-//  TransactionModel.swift
+//  BudgetModel.swift
 //  BudgetApp
 //
 //  Created by Sydney Chapman on 3/31/23.
@@ -8,19 +8,14 @@
 import Foundation
 import SwiftUIFontIcon
 
-struct Transaction: Identifiable, Decodable, Hashable {
+struct Budget: Identifiable, Decodable, Hashable {
+    
     let id: Int
-    let date: String
-    let institution: String
-    let account: String
-    var merchant: String
-    let amount: Double
-    let type: TransactionType.RawValue
+    let maxAmount: Double
+    let currAmount: Double
     var categoryId: Int
     var category: String
-    let isPending: Bool
-    var isTransfer: Bool
-    var isExpense: Bool
+    var isOver: Bool
     var isEdited: Bool
     
     var icon: FontAwesomeCode {
@@ -30,22 +25,10 @@ struct Transaction: Identifiable, Decodable, Hashable {
         return .question
     }
     
-    var dateParsed: Date {
-        date.dateParsed()
-    }
+//    var signedCurrAmount: Double {
+//        return type == TransactionType.credit.rawValue ? currAmount : -currAmount
+//    }
     
-    var signedAmount: Double {
-        return type == TransactionType.credit.rawValue ? amount : -amount
-    }
-    
-    var month: String {
-        dateParsed.formatted(.dateTime.year().month(.wide))
-    }
-}
-
-enum TransactionType: String {
-    case debit = "debit"
-    case credit = "credit"
 }
 
 struct Category {
@@ -59,7 +42,7 @@ struct Category {
 extension Category {
     //Main Categories
     static let autoAndTransport = Category(id: 1, name: "Auto & Transport", icon: .car_alt)
-    static let billsAndUtilities = Category(id: 2, name: "bills & Utilities", icon: .file_invoice_dollar)
+    static let billsAndUtilities = Category(id: 2, name: "Bills & Utilities", icon: .file_invoice_dollar)
     static let entertainment = Category(id: 3, name: "Entertainment", icon: .film)
     static let feesAndCharges = Category(id: 4, name: "Fees & Charges", icon: .hand_holding_usd)
     static let foodAndDining = Category(id: 5, name: "Food & Dining", icon: .hamburger)
@@ -115,3 +98,5 @@ extension Category {
     
     static let all: [Category] = categories + subCategories
 }
+
+

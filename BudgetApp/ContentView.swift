@@ -10,6 +10,7 @@ import SwiftUICharts
 
 struct ContentView: View {
     @EnvironmentObject var transactionListVM: TransactionListViewModel
+    @EnvironmentObject var budgetListVM: BudgetListViewModel
 //    var demoData: [Double] = [8, 2, 4, 6, 12, 9, 2]
 
     var body: some View {
@@ -68,6 +69,12 @@ struct ContentView_Previews: PreviewProvider {
         return transactionListVM
     }()
     
+    static let budgetListVM: BudgetListViewModel = {
+        let budgetListVM = BudgetListViewModel()
+        budgetListVM.budgets = budgetListPreviewData
+        return budgetListVM
+    }()
+    
     static var previews: some View {
         Group {
             ContentView()
@@ -75,5 +82,7 @@ struct ContentView_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
         }
         .environmentObject(transactionListVM)
+        .environmentObject(budgetListVM)
+
     }
 }
