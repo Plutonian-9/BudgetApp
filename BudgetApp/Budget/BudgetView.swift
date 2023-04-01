@@ -27,9 +27,12 @@ struct BudgetView: View {
                 
                 //MARK: Budget Amount Spent
                 Text(budget.currAmount, format: .currency(code: "USD"))
+                    .bold()
                 
                 //MARK: Budget MAX
                 Text(budget.maxAmount, format: .currency(code: "USD"))
+                    .bold()
+                    .foregroundColor(Color.icon)
                 
             }
 //            let rowWidth = 10
@@ -39,7 +42,7 @@ struct BudgetView: View {
                 .padding(.vertical, 2)
                 .frame(maxWidth: .infinity)
                 .frame(maxWidth: .infinity, maxHeight: 20, alignment: .leading)
-                .foregroundColor(Color.icon)
+                .foregroundColor(Color.text)
             
             
             .padding([.top, .bottom], 8)
